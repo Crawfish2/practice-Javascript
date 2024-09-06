@@ -1,0 +1,16 @@
+
+fat {
+    font-weight:bold;
+}
+
+a:link{
+    color:red;
+}
+
+a:visited{
+    color:green;
+}
+
+p em{
+    color:crimson
+}
