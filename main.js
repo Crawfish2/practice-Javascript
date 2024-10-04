@@ -27,9 +27,9 @@ javascriptのプログラムとHTMLファイルはタグに付いているIDで�
 */
 
 const monthselect = document.getElementById("month2");
-monthselectlist();
-function monthselectlist(){
-    for(let i=1;i<12;i++){
+monthselect()
+function monthselect(){
+    for(let i=1;i<=12;i++){
         let option = document.createElement('option');
         option.value = i;
         option.textContent = i + "月";
