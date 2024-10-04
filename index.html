@@ -1,17 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="index.css">
+        <meta charset="UTF-8">
+        <title>生年月日</title>
+        <script src="main.js" defer></script>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <h2>こんにちは</h2>
-        <p id="text">赤色</p>
-        <button onclick="changecolor()">ボタンだよ</button>
-        <button onclick="increasecount()">カウンター</button>
-        <p id="counter">0</p>
-        <button onclick="decreasecount()">減少</button>
+        <h1>生年月日の入力</h1>
+
+        <label for="month">月:</label>
+        <input type="number" id="month" placeholder="月を入力してください" min="1" max="12">
+        <label for="day">日:</label>
+        <input type="number" id="day" placeholder="日を入力してください" min="1" max="31">
+        <button onclick="errorInput()">入力</button>
+
+        <div></div>
+
+        <label for="month-select">月を選択</label>
+        <select name="mm" id="month-select">
+            <option value="">選択してください</option>
+            <option value="m1">1月</option>
+            <option value="m2">2月</option>
+            <option value="m3">3月</option>
+            <option value="m4">4月</option>
+            <option value="m5">5月</option>
+            <option value="m6">6月</option>
+            <option value="m7">7月</option>
+            <option value="m8">8月</option>
+            <option value="m9">9月</option>
+            <option value="m10">10月</option>
+            <option value="m11">11月</option>
+            <option value="m12">12月</option>
+        </select>
+
+        <label for="day-select">日を選択</label>
+        <select name="dd" id="day-select">
+            <option value="">選択してください</option>
+            
     </body>
-    <script src="main.js"></script>
 </html>
