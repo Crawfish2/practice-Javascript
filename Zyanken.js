@@ -1,20 +1,74 @@
 function Zyanken(){
-    const choices = ["gu","choki","paa","muteki"];//配列
+    const choices = ["グー","チョキ","パー","ムテキ"];//配列
 
     let select = document.createElement("select");
+    select.id = "choices"
     choices.forEach(choice => {
         let option = document.createElement("option");
         option.value = choice;
         option.textContent = choice; 
+        option.id = choice;
+
         select.appendChild(option);
     });
     game.appendChild(select);
 
-    let image = document.createElement("img")
-    image.alt = "画像読み込みエラー"
+    let nyuryoku = document.createElement("button");
+    nyuryoku.textContent = "決定";
+
+    game.appendChild(nyuryoku);
+
+    let image = document.createElement("img");
     image.style.width = "270px";
-    image.style.height = "200px";
-    image.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14296.png"
+    image.style.height = "200px";    
+
+    let enimage = document.createElement("img");
+    enimage.style.width = "270px";
+    enimage.style.height = "200px";   
+
+    let hand = document.getElementById("choices");
+
+    nyuryoku.addEventListener("click",function(){
+
+        switch(hand.value){
+            
+            case "グー":
+                image.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14296.png";
+                break;
+            case "チョキ":
+                image.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14297.png";
+                break;
+            case "パー":
+                image.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14298.png";
+                break;
+            case "ムテキ":
+                image.src = "https://45mix.net/wp-content/uploads/2014/03/c26f6482d11e463f2629f400e85938c1.png";
+            default:
+                break;
+        }
+        let enemy = choices[Math.floor(Math.random() * choices.length)];
+        console.log(enemy); 
+        switch(enemy){
+            
+            case "グー":
+                enimage.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14296.png";
+                break;
+            case "チョキ":
+                enimage.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14297.png";
+                break;
+            case "パー":
+                enimage.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14298.png";
+                break;
+            case "ムテキ":
+                enimage.src = "https://45mix.net/wp-content/uploads/2014/03/c26f6482d11e463f2629f400e85938c1.png";
+            default:
+                break;
+        }
+    
+
+        image.alt = "画像読み込みエラー";
+        enimage.alt = "画像読み込みエラー";
+    })
 
     game.appendChild(image);
 
