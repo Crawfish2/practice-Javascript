@@ -27,6 +27,8 @@ function Zyanken(){
     enimage.style.height = "200px";   
 
     let hand = document.getElementById("choices");
+    
+    let enemy = choices[Math.floor(Math.random() * choices.length)];
 
     nyuryoku.addEventListener("click",function(){
 
@@ -46,10 +48,8 @@ function Zyanken(){
             default:
                 break;
         }
-        let enemy = choices[Math.floor(Math.random() * choices.length)];
-        console.log(enemy); 
+        console.log(enemy.value); 
         switch(enemy){
-            
             case "グー":
                 enimage.src = "https://illustcenter.com/wp-content/uploads/2022/05/rdesign_14296.png";
                 break;
@@ -64,14 +64,13 @@ function Zyanken(){
             default:
                 break;
         }
-    
 
         image.alt = "画像読み込みエラー";
         enimage.alt = "画像読み込みエラー";
     })
 
     game.appendChild(image);
-
+    game.appendChild(enimage);
 
     //forEach 配列などの複数のデータがあるものに使える。全部やる関数
     //配列.forEach(配列の中身 => {命令})
