@@ -56,19 +56,45 @@ function NumberGuessGame() {
     input.type = "number";
     input.placeholder = "好きな数字を入力してください。(1~100)";
     Checkbutton.textContent = "入力";
+    // message.textContent = randomNumber;
+    // game.appendChild(message);
 
     Checkbutton.addEventListener("click",function(){
         message.textContent = randomNumber;
-        if ( == randomNumber) {
+        const val = parseInt(input.value);
+        if (val > 100){
+            console.error("オーバーフロー") 
+        }
+        else if (val < 0){
+            console.error("アンダーフロー") 
+        }
+        else if (val == randomNumber) {
             judge.textContent="大正解！！";
+            game.appendChild(judge);
+            game.appendChild(message);
+        }
+        else if (val <= randomNumber + 5 && parseInt(input.value) >= randomNumber - 5){
+            judge.textContent="惜しい";
+            game.appendChild(judge);
+            game.appendChild(message);
+        }
+        else if (val <= randomNumber) {
+            judge.textContent="答えは大きいよ";
+            game.appendChild(judge);
+            game.appendChild(message);
+        }
+        else if (val >= randomNumber) {
+            judge.textContent="答えは小さいよ";
+            game.appendChild(judge);
+            game.appendChild(message);
+        }
+        else {
+            console.error("入力値不明")
         }
     })
 
     game.appendChild(input);
-    game.appendChild(message);
     game.appendChild(Checkbutton);
-    game.appendChild(message);
-
 
 }
 NumberGuessGame();
