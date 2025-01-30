@@ -53,6 +53,11 @@ function NumberGuessGame() {
     let input = document.createElement("input");
     let Checkbutton = document.createElement("button");
 
+    let count = 0;
+    const countDisplay = document.createElement("p");
+    countDisplay.textContent = `試行回数: ${count}`;
+
+
     input.type = "number";
     input.placeholder = "好きな数字を入力してください。(1~100)";
     Checkbutton.textContent = "入力";
@@ -61,6 +66,7 @@ function NumberGuessGame() {
 
     Checkbutton.addEventListener("click",function(){
         message.textContent = randomNumber;
+        count++
         const val = parseInt(input.value);
         if (val > 100){
             console.error("オーバーフロー") 
@@ -73,7 +79,7 @@ function NumberGuessGame() {
             game.appendChild(judge);
             game.appendChild(message);
         }
-        else if (val <= randomNumber + 5 && parseInt(input.value) >= randomNumber - 5){
+        else if (val <= randomNumber + 5 && val >= randomNumber - 5){
             judge.textContent="惜しい";
             game.appendChild(judge);
             game.appendChild(message);
@@ -95,6 +101,7 @@ function NumberGuessGame() {
 
     game.appendChild(input);
     game.appendChild(Checkbutton);
+    game.appendChild(countDisplay);
 
 }
 NumberGuessGame();
