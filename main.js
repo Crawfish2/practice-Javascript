@@ -1,6 +1,38 @@
+const select = document.createElement("select");
+const game = document.getElementById("game");
+const gameSelect =document.getElementById("gameSelect");
+select.name = "games";
+select.id = "game-select";    
+const options = [
+    { value: "", text: "Game Select"},
+    { value: "clicker", text: "クリッカーゲーム"},
+    { value: "number", text: "数当てゲーム"}
+];
+options.forEach(OptionData => {
+    const option = document.createElement("option");
+    option.value = option.value;
+    option.textContent = OptionData.text;
+    select.appendChild(option);
+});
+gameSelect.appendChild(select);
+const gameSelector = document.getElementById("game-select");
+    gameSelector.addEventListener("change",function(){
+    game.innerHTML = "";
+    switch(gameSelector.value){
+        case "number":
+            NumberGuessGame();
+            break;
+        case "clicker":
+            Clicker();
+            break;
+        case "":
+            break
+        default:
+            throw new Error(`${gameSelector.value}って？`)
+    }
+});
 function Clicker() {
     let count = 0;
-    const game = document.getElementById("game");
     //+1ボタンの定義
     let button1 = document.createElement("button");
     button1.textContent = "+1ボタン";
@@ -104,4 +136,4 @@ function NumberGuessGame() {
     game.appendChild(countDisplay);
 
 }
-NumberGuessGame();
+//NumberGuessGame();
