@@ -1,8 +1,8 @@
-function enzan(btn) {
+function enzan() {
     if (btn == "="){
-        document.keisanki.kakubasyo.value = eval(document.keisanki.kakubasyo.value);
+        eval(document.getElementById("kakubasyo").value);
     }
     else if (btn == "reset"){
-        document.keisanki.kakubasyo.value = "";
+        document.getElementById("kakubasyo").textContent = ""
     }
 }
