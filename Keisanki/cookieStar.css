@@ -4,20 +4,21 @@
     margin: 5px;
     font-size: 90px;
 }
-.enzan {
+.enzansi {
     width: 110px;
     height: 110px;
     margin: 5px;
     font-size: 90px;
     background-color: aqua;
 }
-#epual {
+#equal {
     background-color: orange;
 }
 #reset {
     background-color: red;
 }
 #kakubasyo {
+    width: 1000px;
     height: 50px;
     font-size: 30px;
     border: solid;
