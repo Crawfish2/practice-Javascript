@@ -1,8 +1,15 @@
-#suuzi > button {
+.suuzi {
     width: 110px;
     height: 110px;
     margin: 5px;
     font-size: 90px;
+}
+.enzan {
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    font-size: 90px;
+    background-color: aqua;
 }
 #epual {
     background-color: orange;
@@ -11,9 +18,9 @@
     background-color: red;
 }
 #kakubasyo {
-    width: 355px;
     height: 50px;
     font-size: 30px;
+    border: solid;
 }
 #enzan {
     
