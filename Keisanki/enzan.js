@@ -1,8 +1,17 @@
 function enzan() {
-    if (btn == "="){
-        eval(document.getElementById("kakubasyo").value);
+    const enzansi = document.getElementsByClassName("enzansi");
+    const btn = document.getElementsByClassName("suuzi");
+    const kakikomi = document.getElementById("kakubasyo");
+    let keisan = ;
+    if (enzansi == "="){
+        eval();
+        kakikomi.textContent = "";
     }
-    else if (btn == "reset"){
-        document.getElementById("kakubasyo").textContent = ""
+    else if (enzansi == "reset"){
+        kakikomi.textContent = "";
+    }
+    else if (enzansi == "+"){
+        kakikomi.textContent = "+";
+
     }
 }

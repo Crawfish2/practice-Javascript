@@ -4,13 +4,13 @@ const gameSelect =document.getElementById("gameSelect");
 select.name = "games";
 select.id = "game-select";    
 const options = [
-    { value: "", text: "Game Select"},
-    { value: "clicker", text: "クリッカーゲーム"},
-    { value: "number", text: "数当てゲーム"}
+    { value: "",  text: "Game Select"},
+    { value: "clicker",  text: "クリッカーゲーム"},
+    { value: "number",  text: "数当てゲーム"}
 ];
 options.forEach(OptionData => {
     const option = document.createElement("option");
-    option.value = option.value;
+    option.value = OptionData.value;
     option.textContent = OptionData.text;
     select.appendChild(option);
 });
@@ -19,14 +19,14 @@ const gameSelector = document.getElementById("game-select");
     gameSelector.addEventListener("change",function(){
     game.innerHTML = "";
     switch(gameSelector.value){
-        case "number":
-            NumberGuessGame();
-            break;
         case "clicker":
             Clicker();
             break;
+        case "number":
+            NumberGuessGame();
+            break;
         case "":
-            break
+            break;
         default:
             throw new Error(`${gameSelector.value}って？`)
     }
